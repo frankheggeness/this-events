@@ -37,5 +37,17 @@ function dropDown(){
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
 
+var findThumb = document.getElementsByClassName('thumb');
 
+for(var i=0; i<findThumb.length; i++){
+    findThumb[i].addEventListener('click', addThumb)
+    var newThumb = document.createElement('div');
+    newThumb.className = 'counter';
+    newThumb.innerHTML = 0;
+    findThumb[i].appendChild(newThumb);
+}
+function addThumb(){
+    var findCounter = this.querySelector('.counter')
+    findCounter.innerHTML++
+}
 
